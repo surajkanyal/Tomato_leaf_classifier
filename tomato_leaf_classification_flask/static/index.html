@@ -1,0 +1,137 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tomato leaf test</title>
+    
+    <link rel="icon" href="static/images/cblogo.png">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('static/images/bg.png'); /* Replace 'background-image.jpg' with your image file path */
+            background-size: cover; /* Adjust the blur level as needed */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8); /* Adjust the background color opacity as needed */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        img.logo {
+            max-width: 150px; /* Adjust the logo size as needed */
+            margin-bottom: 20px;
+        }
+
+        input[type="file"] {
+            padding: 10px;
+            border: none;
+            background-color: #007BFF; /* Button background color */
+            color: #fff; /* Button text color */
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="file"]:hover {
+            background-color: #0056b3; /* Hover background color */
+        }
+        .heading {
+            text-align: center;
+            font-family: "Arial", sans-serif;
+            font-size: 45px;
+            color: #333;
+            background-color: #f8f8f8;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 42px rgba(0, 0, 0, 0.1);        }
+    </style>
+</head>
+<body>
+    <h1 class="heading">Welcome to Tomato leaf classification website</h1>
+
+    <div class="container">
+        <img src="static/images/cblogo.png" alt="Logo" class="logo"> 
+        <h1>Upload a File</h1>
+        <form action="/predict" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" id="file" name = 'my_image'>
+      
+            <button type="submit" >Submit</button>
+         </form>   
+
+        {% if prediction %}
+        <img src="{{img_path}}" height="400px" width="400px">
+	    <h2> Your Prediction   : <i> {{prediction}} </i></h2>
+
+	{% endif %}
+
+    </div>
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <title>Tomato leaf test</title>
+  <link rel="icon" href="static/images/cblogo.png">
+
+</head>
+<body>
+
+<div class="container">
+  <h1 class="jumbotron bg-primary">Welcome to Tomato leaf classification website</h1>
+  <br><br>
+  <form class="form-horizontal" action="/predict" method="post" enctype="multipart/form-data">
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="pwd">Upload Your Image :</label>
+      <div class="col-sm-10">          
+        <input type="file" class="form-control" placeholder="Hours Studied" accept ='image/*' name="my_image" id="pwd">
+      </div>
+    </div>
+
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-success">Submit</button>
+      </div>
+    </div>
+  </form>
+
+	{% if prediction %}
+  <img src="{{img_path}}" height="400px" width="400px">
+	<h2> Your Prediction   : <i> {{prediction}} </i></h2>
+
+	{% endif %}
+
+</div>
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
